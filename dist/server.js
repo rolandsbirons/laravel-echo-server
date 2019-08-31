@@ -21,7 +21,7 @@ var Server = (function () {
                 resolve(_this.io);
                 _this.io.eio.generateId = function () {
                     var socketIdSpec = _this.options.socketIdSpec || '([a-zA-Z0-9]{15})';
-                    return RandExp(socketIdSpec);
+                    return new RandExp(socketIdSpec);
                 };
             }, function (error) { return reject(error); });
         });
