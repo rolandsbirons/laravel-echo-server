@@ -43,7 +43,7 @@ export class Server {
                 this.io.eio.generateId = () => {
                     let socketIdSpec = this.options.socketIdSpec || '([a-zA-Z0-9]{15})';
 
-                    return RandExp(socketIdSpec);
+                    return new RandExp(socketIdSpec);
                 };
             }, error => reject(error));
         });
